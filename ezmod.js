@@ -85,7 +85,7 @@ const path = require('path');
     var class_replace = class_folder_replace.replace(/{class_replace}/g, (toPascalCase(`${answer.new_module_name}`)));
     var folder_replace = class_replace.replace(/{folder_replace}/g, (snake_case_string(`${answer.folder_name}`))); 
     var result = folder_replace.replace(/{replace}/g, (snake_case_string(`${answer.new_module_name}`))); 
-    var savePath = __dirname + `/admin/controller/extension/${answer.folder_name}/`;
+    var savePath = __dirname + `/../admin/controller/extension/${answer.folder_name}/`;
 
     fs.writeFile(savePath+snake_case_string(`${answer.new_module_name}`)+".php", result, 'utf8', function (err) {
       
@@ -104,7 +104,7 @@ const path = require('path');
     var folder_replace = data.replace(/{folder_replace}/g, (snake_case_string(`${answer.folder_name}`)));
     var class_replace = folder_replace.replace(/{class_replace}/g, (toPascalCase(`${answer.new_module_name}`)));
     var result = class_replace.replace(/{replace}/g, (snake_case_string(`${answer.new_module_name}`))); 
-    var savePath = __dirname + `/admin/view/template/extension/${answer.folder_name}/`;
+    var savePath = __dirname + `/../admin/view/template/extension/${answer.folder_name}/`;
 
     fs.writeFile(savePath+snake_case_string(`${answer.new_module_name}`)+".twig", result, 'utf8', function (err) {
       
@@ -122,7 +122,7 @@ const path = require('path');
     var folder_replace = data.replace(/{folder_replace}/g, (snake_case_string(`${answer.folder_name}`)));
     var uppercase_title = folder_replace.replace(/{uppercase_title}/g, (sentenceCase(`${answer.title}`)));
     var result = uppercase_title.replace(/{title}/g, space_replace(`${answer.title}`).toLowerCase()); 
-    var savePath = __dirname + `/admin/language/en-gb/extension/${answer.folder_name}/`;
+    var savePath = __dirname + `/../admin/language/en-gb/extension/${answer.folder_name}/`;
   
     fs.writeFile(savePath+snake_case_string(`${answer.new_module_name}`)+".php", result, 'utf8', function (err) {
       
@@ -141,7 +141,7 @@ if (answer.folder_name == "module" || answer.folder_name == "payment")
             var class_folder_replace = data.replace(/{class_folder_replace}/g, (toPascalCase(`${answer.folder_name}`)));
             var class_replace = class_folder_replace.replace(/{class_replace}/g, (toPascalCase(`${answer.new_module_name}`)));
             var result = class_replace.replace(/{replace}/g, (snake_case_string(`${answer.new_module_name}`))); 
-            var savePath = __dirname + `/admin/model/extension/${answer.folder_name}/`;
+            var savePath = __dirname + `/../admin/model/extension/${answer.folder_name}/`;
         
             fs.writeFile(savePath+snake_case_string(`${answer.new_module_name}`)+".php", result, 'utf8', function (err) {
             
