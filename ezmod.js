@@ -148,7 +148,7 @@ if (answer.folder_name == "module" || answer.folder_name == "payment")
             if (err) return console.log(err);
             
             })
-            console.log(snake_case_string(`${answer.new_module_name}`)+"2.php is created")
+            console.log(snake_case_string(`${answer.new_module_name}`)+".php is created")
         })
     }
     else
